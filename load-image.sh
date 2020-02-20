@@ -43,6 +43,6 @@ echo "Creating MBR template (enable booting from USB stick via legacy BIOS) ..."
 # Extract MBR template (first 432 bytes) file to disk
 dd if=$IMAGE bs=1 count=432 of=$MBR_TEMPLATE
 chown $USER.$USER $MBR_TEMPLATE
+umount $IMAGE
 
 echo "Complete.";exit 0 
-umount $IMAGE
