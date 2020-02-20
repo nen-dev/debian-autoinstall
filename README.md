@@ -2,7 +2,8 @@
 
 Scripts for creating custom Debian autoinstall image:
 
-   run.sh              | main script which runs all scripts and make new custom image   
+   run.sh              | main script which runs all scripts and make new custom image
+   --------------------|--------------------------------------------------------------
    prereq              | you should install packages which are listed in this file before using scripts
    settings.conf       | contains parameters to build your own Debian custom installation image 
    pressed.cfg         | contains default autoinstall pressed file, you could specify additional setting in it if you need
