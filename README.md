@@ -2,8 +2,8 @@
 
 Scripts for creating custom Debian autoinstall image:
 
-# file                | description
---------------------|--------------------------------------------------------------
+file                | description
+-----------------------|---------------------------------------------------
 _run.sh_              | main script which runs all scripts and make new custom image
 _prereq_             | you should install packages which are listed in this file before using scripts
 _settings.conf_       | contains parameters to build your own Debian custom installation image 
