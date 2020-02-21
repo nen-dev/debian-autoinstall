@@ -16,14 +16,6 @@ if [ ! -x $XISO ]; then
     echo "Please install xorriso using: apt-get install -y xorriso";exit 2;
 fi
 if [[ -f $IMAGENAME.iso ]]; then rm $IMAGENAME.iso; fi
-if [[ -f $IMAGENAME-mbr.iso ]]; then rm $IMAGENAME-mbr.iso; fi
-if [[ -f $IMAGENAME-efi.iso ]]; then rm $IMAGENAME-efi.iso; fi
-
- 
-xorriso -as mkisofs -o $IMAGENAME-mbr.iso \
--isohybrid-mbr $MBR_TEMPLATE \
--c isolinux/boot.cat -b isolinux/isolinux.bin \
--no-emul-boot -boot-load-size 4 -boot-info-table ./$CUSTOM_IMAGE_FOLDER
 xorriso -as mkisofs \
    -r -V "Debian $IMAGENAME" \
    -o $IMAGENAME.iso \
@@ -36,20 +28,11 @@ xorriso -as mkisofs \
    -e boot/grub/efi.img \
    -no-emul-boot -isohybrid-gpt-basdat -isohybrid-apm-hfsplus \
    $CUSTOM_IMAGE_FOLDER/
-xorriso -as mkisofs \
-   -r -V "Debian $IMAGENAME" \
-   -o $IMAGENAME-efi.iso \
-   -J -joliet-long -cache-inodes \
-   -e boot/grub/efi.img \
-   -no-emul-boot \
-   -append_partition 2 0xef $EFI_IMG \
-   -partition_cyl_align all \
-   $CUSTOM_IMAGE_FOLDER/   
 #genisoimage -r -J -b isolinux/isolinux.bin -c isolinux/boot.cat \
 #            -no-emul-boot -boot-load-size 4 -boot-info-table \
 #            -o $IMAGENAME.iso $CUSTOM_IMAGE_FOLDER/
 
-isohybrid $IMAGENAME-*.iso
+#isohybrid $IMAGENAME-*.iso
 if [[ $? -ne 0 ]]; then 
     echo 'Something went wrong';exit 2 
 fi    
