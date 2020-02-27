@@ -61,8 +61,11 @@ ROOTPASSMD5=$(echo "$ROOTPASS" | mkpasswd -s -m sha-512)
 
 while echo $USERPASSMD5|grep -q '*' || echo $USERPASSMD5|grep -q '/' || echo $USERPASSMD5|grep -q '\\'; do USERPASSMD5=$(echo "$USERPASS" | mkpasswd -s -m sha-512); done
 while echo $ROOTPASSMD5|grep -q '*' || echo $ROOTPASSMD5|grep -q '/' || echo $ROOTPASSMD5|grep -q '\\'; do ROOTPASSMD5=$(echo "$ROOTPASS" | mkpasswd -s -m sha-512); done
-sed -i "s/### Account setup/### Account setup\nd-i passwd\/root-login boolean true\nd-i passwd\/make-user boolean true\nd-i passwd\/root-password-crypted password $USERPASSMD5\nd-i passwd\/user-fullname string $USERNAME\nd-i passwd\/username string $USERNAME\nd-i passwd\/user-password-crypted password $ROOTPASSMD5\nd-i user-setup\/allow-password-weak boolean true\nd-i user-setup\/encrypt-home boolean false\n/" $CUSTOM_IMAGE_FOLDER/preseed.cfg
+#sed -i "s/### Account setup/### Account setup\nd-i passwd\/root-login boolean true\nd-i passwd\/make-user boolean true\nd-i passwd\/root-password-crypted password $USERPASSMD5\nd-i passwd\/user-fullname string $USERNAME\nd-i passwd\/username string $USERNAME\nd-i passwd\/user-password-crypted password $ROOTPASSMD5\nd-i user-setup\/allow-password-weak boolean true\nd-i user-setup\/encrypt-home boolean false\n/" $CUSTOM_IMAGE_FOLDER/preseed.cfg
 
+sed -i "s/### Account setup/### Account setup\nd-i passwd\/root-login boolean true\nd-i passwd\/make-user boolean true\nd-i passwd\/root-password password $ROOTPASS\n\nd-i passwd\/root-password-again password $ROOTPASS\nd-i passwd\/user-fullname string $USERNAME\nd-i passwd\/username string $USERNAME\nd-i passwd\/user-password password $USERPASS\n\nd-i passwd\/user-password-again password $USERPASS\nd-i user-setup\/allow-password-weak boolean true\nd-i user-setup\/encrypt-home boolean false\n/" $CUSTOM_IMAGE_FOLDER/preseed.cfg
+
+ 
 cp -r _SCRIPTS/  $CUSTOM_IMAGE_FOLDER/
 echo "Complete.";exit 0 
 
