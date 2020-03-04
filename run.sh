@@ -17,6 +17,4 @@
 SETTINGS=settings.conf
 USER=$(cat $SETTINGS | grep USER= | awk -F'=' '{print $2}')
 
-bash load-image.sh && \
-su $USER; bash customize-image.sh && \
-bash create-custom.sh 
+bash load-image.sh && bash customize-image.sh && bash create-custom.sh 
