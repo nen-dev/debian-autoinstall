@@ -14,6 +14,9 @@
 #   customize-image.sh  - contains commands for Debian image customization
 #   create-custom.sh    - create new images $IMAGE-mbr.iso,  $IMAGE-efi.iso, $IMAGE.iso
 #   mk-bootable-usb.sh  - you could use this script to create bootable USB
+#
+# REQUIREMENTS: bsdtar xorriso
+#
 SETTINGS=settings.conf
 USER=$(cat $SETTINGS | grep USER= | awk -F'=' '{print $2}')
 
