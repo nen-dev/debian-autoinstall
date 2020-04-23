@@ -1,6 +1,6 @@
 # debian-autoinstall
 
-Scripts for creating custom Debian autoinstall image:
+Scripts for creating custom Debian autoinstall image or debian usb bootable flash:
 
 file                | description
 -----------------------|---------------------------------------------------
@@ -16,7 +16,13 @@ _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  
  # HOW to start use it?
  1) Modify settings.conf
- 2) Run following:
+ 2) You can modify file pressed.cfg 
+ modify 345 tasksel tasksel/first multiselect standard line
+ change 
+ tasksel/first multiselect standard - for console server
+ or 
+ tasksel tasksel/first multiselect standard, desktop, lxde-desktop - for workstation
+ 3) Run following:
  ```console
  apt-get -y install bsdtar xorriso
  
