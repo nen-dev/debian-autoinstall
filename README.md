@@ -22,7 +22,7 @@ _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  tasksel/first multiselect standard - for console server
  or 
  tasksel tasksel/first multiselect standard, desktop, lxde-desktop - for workstation
- 3) Run following:
+ 3) Run the following:
  ```console
  apt-get -y install bsdtar xorriso
  
