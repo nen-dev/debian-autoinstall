@@ -14,6 +14,7 @@ _customize-image.sh_  | contains commands for Debian image customization
 _create-custom.sh_    | create new images $IMAGE-mbr.iso,  $IMAGE-efi.iso, $IMAGE.iso
 _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  
+ # HOW to start use it?
  
  ```console
  apt-get -y install bsdtar xorriso
@@ -22,7 +23,7 @@ _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  
  bash run.sh 
 
- \# /dev/sdb - usb disk
+ # /dev/sdb - usb disk
  
  bash mk-bootable-usb.sh /dev/sdb
  ```
