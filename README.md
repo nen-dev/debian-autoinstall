@@ -14,7 +14,7 @@ _customize-image.sh_  | contains commands for Debian image customization
 _create-custom.sh_    | create new images $IMAGE-mbr.iso,  $IMAGE-efi.iso, $IMAGE.iso
 _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  
- # HOW to start use it?
+ # How to start use it?
  1) Modify settings.conf
  2) You can modify file pressed.cfg 
  modify 345 tasksel tasksel/first multiselect standard line
