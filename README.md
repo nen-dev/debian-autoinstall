@@ -16,7 +16,7 @@ _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  
  # HOW to start use it?
  1) Modify settings.conf
- 2) Run follwing:
+ 2) Run following:
  ```console
  apt-get -y install bsdtar xorriso
  
