@@ -20,6 +20,6 @@ _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  
  bash run.sh 
 
- # /dev/sdb - usb disk
+ \# /dev/sdb - usb disk
  
  bash mk-bootable-usb.sh /dev/sdb
