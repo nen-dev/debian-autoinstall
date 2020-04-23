@@ -15,7 +15,7 @@ _create-custom.sh_    | create new images $IMAGE-mbr.iso,  $IMAGE-efi.iso, $IMAG
 _mk-bootable-usb.sh_  | you could use this script to create bootable USB
  
  # HOW to start use it?
- 1) modify settings.conf
+ 1) Modify settings.conf
  2) Run follwing:
  ```console
  apt-get -y install bsdtar xorriso
