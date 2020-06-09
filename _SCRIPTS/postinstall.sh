@@ -5,7 +5,7 @@
 # 1. Setup APT
 
 CODENAME='buster'
-PACKAGES_LIST="python3 python3-pip zabbix-agent openssh-server telnet qemu-guest-agent"
+PACKAGES_LIST="python3 python3-pip zabbix-agent openssh-server telnet qemu-guest-agent open-vm-tools"
 WORKDIR='/root/_SCRIPTS/'
 echo -e "
 # $CODENAME
